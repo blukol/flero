@@ -1,0 +1,65 @@
+
+Calculation
+K 1) Remove results from tomorrow onwards.
+K 2) Calc until today
+K 2b) Whenever competition is over, final prediction and set seeds for follow up.
+
+
+3) maybe eliminate non-participants
+
+What to simulate:
+4) Pick all ongoing competitions, with fixtures and seeds only.
+5) Pick all future competitions, create fixtures with seeds only.
+
+Simulate:
+6) Whenever competition is over, set seed set for follow up.
+
+
+
+Simulate games from in-progress.
+- DONE for Round Robin
+- DONE for Knock out
+- DONE for everything else
+
+Implement Sets
+- DONE games in sets
+- DONE sets in match
+- DONE append dead rubber.
+
+
+Implement Sets in Ranking
+- DONE Implement Seeds
+- DONE create seeds of new comp when predecessors finish
+
+Fixtures for next round/comp
+Simulate next round/comp
+
+Implement Rating as tie break
+Implement Storing all predictions:
+k points won
+k rank achieved (round robin)
+- phase reached (knock out)
+
+- DONE Implement comp-specific points per win.
+- Implement SVG
+- Implement Validation on points achieved. Kullback-Leibler.
+- Set simulation start date earlier for follow up tournaments
+- Find entropy per game.
+- Find final outcome per game outcome.
+- Find conditions to achieve outcome.
+
+
+
+- create games of new comp the day it starts.
+
+- Bring SQLite in
+- Export Games
+- Export ratings
+- Clean Folders
+- Check/improve Covariance algo
+- Add option to include Prior
+- Ongoing ULive
+- Armageddon to be better
+- Other tournament formats
+- Find newer online rapid tournaments
+- 

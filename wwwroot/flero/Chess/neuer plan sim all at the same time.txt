@@ -1,0 +1,176 @@
+Remove results from tomorrow.
+Calc until Today.
+
+MVP, Ratings only.
+- Bring SQLite in
+SQLite.Player: ID,FideID,Usual Name,Main Name,Nationality,DOB,Sex,
+SQLite.Game: FirstDate,LastDate,Competition,Round,White,Black,Result,TimeControl,Moves,WhiteElo,BlackElo
+SQLite.
+SQLite.Elo: Date, Player, Elo, Variance
+
+- Make World sports-agnostic
+- About
+- Clubpage: Intro, chart, games, matchups, stats, ranks
+- Rankpage: Tabelle
+- Gamepage: 
+
+
+Version 2, Basic Tournament features.
+- Ongoing ULive
+- Other tournament formats
+- Allow p(Draw)>0.5
+- Explain format
+
+Version 3, Cool Tournament features.
+- "mathematically eliminated"
+- Necessary to Qualify
+- Sufficient to qualify
+- Predict Arranged draws.
+
+Version 4, Odds provider
+- uncertainty-based overround
+- 
+
+
+
+Later:
+
+- 2 ratings: Short and long time control
+- 2 ratings: online and offline.
+
+
+Done:
+K Clean Folders
+K Check/improve Covariance algo
+K Add option to include Prior
+K Find newer online rapid tournaments
+K Different points per win
+K Find arranged draws
+K Armageddon to be better
+K Initial rating for Christiansen
+K Bring spaghetti code into classes too
+K Sets where draw is possible not have 100% for both.
+K 2 ratings: Black and White
+K Dump differently.
+K Logo
+K Topline
+K Implement Tie properly. Only for P=2
+K Calculate QifW once, just before dumping. When dumping, store result and calc QifW, then dump.
+K Pseudo-Random
+
+
+
+
+-Site: 
+- Who is best player?
+- what needs to happen for something unlikely.
+
+
+
+- List of First-Seed Tournaments, for them: First-Seeds
+- Creation of everything below
+- 
+
+
+Charts:
+Rank|Pts per Player
+Pts|Elo per Player
+Rank|Elo per Player
+
+Rank over time per Player
+Rank=1 over time every player
+
+
+168
+32 64
+ 
+ 
+100% of simulations say X
+-> check for certainty.
+1) check with equal Elo
+not 100% anymore: stop, not certain
+2) check with highly variable Elo
+not 100% anymore: stop, not certain
+3) who can catch -> 1 on 1 with every, points only, (best >= own worst) -> list1, (worst <= own best)-> list2
+list1 smaller than spots -> stop, certain
+else:
+4) all permutations of games between contenders
+-- each permutation: 1 on 1 with every, points only, (best >= own worst) -> list1, (worst <= own best)-> list2
+max length of list smaller than spots -> stop, certain
+5) From permutations, get all where: (Equal points, some in, some out).
+6) Look at next tie-breaker: Only X as result? if yes, stop certain, if nonX happens: stop uncertain. If unknown: next tie-breaker
+
+
+Function: Get Max and min achievable from all others.
+
+For one competitor P do lowest rank achievable:
+P to lose all games, get min(P).
+all p_i in the mix
+
+while ps leave mix:
+	Get max(p_i) and min(p_i) for every p_i.
+	If min(p_i) > min(P): p_i out of mix 
+	If max(p_i) < min(P): p_i out of mix
+	If p_i out of mix -> p_i to lose all games against in_the_mix
+
+Remaining ps:
+	If points still available < points needed for all in the mix to get level -> last place impossible.
+	
+
+
+P to win every game (2 columns)
+while:
+	Everyone to lose every undefined game
+	Calc Points
+		If otherPoints > Points: other out of mix
+		When Out of mix -> Lose every game
+	Everyone to win all undefined games
+	Calc Points
+		If otherPoints < Points: other out of mix
+		When Out of mix -> Lose every game
+While Remaining points in games insufficient for all to level:
+	Last one out of mix
+		When Out of Mix -> Lose every game
+		
+Rank in Sims: Possible
+Rank not in Sims but in here: Cannot rule out
+Rank not in here: Mathematically impossible.
+
+#While Smallest minimum points < biggest maximum points :
+# if MinPts + DrawPts < min(P):
+#	Smallest minimum points to win against biggest maximum points
+
+
+
+Calc A = (#39 - uniquegames39v39) + #41.)
+Calc B = 3* Games outstanding
+Calc C = Sum of Points missing for 40.
+Calc D = B-A-C
+if D negativ: throw last one out
+if D >= 0: #39 gegeneinander draw. for d in range D: #39,#40 untereinander draw. 
+
+
+PointsKey = {0.0:0,0.5:1,1.0:3}
+
+Score 2-dimensional: [1,1][1,0]
+
+PointsKey = [0,1,2,3]
+
+Points = 
+
+
+K implement date properly
+- 
+K implement chessplayermap
+K result
+
+
+- split events automatically
+- person and team classes
+- nationality by period and separate table linked to person.
+
+
+
+
+
+
